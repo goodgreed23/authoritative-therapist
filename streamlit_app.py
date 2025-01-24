@@ -43,9 +43,7 @@ user_PID = st.text_input("What is your participant ID?")
 # Create a dropdown selection box
 # target_style = st.selectbox('Choose a communication st:', styles)
 
-# Display the selected option
-st.write("""**Start chatting with the AI therapist. After getting >= 10 responses from the therapist,  a 'save' button will appear. After you finished the conversation naturally,
-         you may click the 'save' button to save the conversation and then fill out the evaluation questions in the sidebar.**""")
+
 
 # Retrieve api key from secrets
 openai_api_key = st.secrets["OPENAI_API_KEY"]
@@ -71,9 +69,12 @@ file_name = 'NA'
 
 
 if not user_PID:
-    st.info("Please enter your participant ID to continue.", icon="🗝️")
+    st.info("Please enter your participant ID to start.", icon="🗝️")
+         
 else:
-    
+    # Display the selected option
+    st.write("""**Start chatting with the AI therapist. After getting >= 10 responses from the therapist,  a 'save' button will appear. After you finished the conversation naturally,
+         you may click the 'save' button to save the conversation and then fill out the evaluation questions in the sidebar.**""")
     # Create an OpenAI client.
     llm = ChatOpenAI(model=MODEL_SELECTED, api_key=openai_api_key)
     # llm = ChatOpenAI(model="gpt-4o-mini", api_key=openai_api_key)
