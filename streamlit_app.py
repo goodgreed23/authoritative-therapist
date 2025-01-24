@@ -331,7 +331,7 @@ else:
         blob.upload_from_filename(file_name)
 
         if st.button("Save & Start Evaluation"):
-            st.write("**Chat history was uploaded successfully. You can begin filling out the evaluation questions in the side bar now.**")
+            st.write("**Chat history was uploaded successfully. Please fill out the evaluation questions next. We would like to hear your experience interacting with this AI therapy chatbot.**")
 
         # csv = chat_history_df.to_csv()
         # st.download_button(
