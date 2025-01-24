@@ -3,12 +3,12 @@ target_styles = ['authoritative', 'talkative', 'sentimentality', 'conversational
 definitions = ["Authoritative is the tendency to command or demand others in a conversation, without considering the others' willingness and concerns.",
                "Talkativeness is a tendency to initiate a conversation, talk a lot, and avoid silence in a conversation. ",
                "Sentimentality is a tendency to express one's own emotions or display empathic emotional responses to others in a conversation.",
-               "Conversational dominance is the tendency to take the lead in a conversation and detremine its topics and directions.",
+               "Conversational dominance is the tendency to take the lead in a conversation and determine its topics and directions.",
                "Informality is a tendency to talk casually and avoid being formal, distant, or stiff in a conversation.",
                "Conciseness is the tendency to use as few words as possible to clearly convey ideas and explain things in a conversation, and avoid being long-winded."
                ]
 
-survey_items = ["I am very likely to tell someone what they should do; I sometimes insist that otheres do what I say; I expect people to obey when I ask them to do something; When I feel others should do something for me, I ask for it in a demanding tone of voice. ",
+survey_items = ["I am very likely to tell someone what they should do; I sometimes insist that others do what I say; I expect people to obey when I ask them to do something; When I feel others should do something for me, I ask for it in a demanding tone of voice. ",
                 "I always have a lot to say; I have a hard time keeping myself silent when around other people; I am never the one who breaks a silence by starting to talk; I like to talk a lot.",
                 "When I see others cry, I have difficulty holding back my tears; During a conversation, I am easily overcome by emotions; When describing my memories, i sometimes get visibily emotional; People can tell that I am emotionally touched by some topics of conversation.",
                 "I often take the lead in a conversation; I often determine which topics are talked about during a conversation; I often determine the direction of a conversation.",
