@@ -105,151 +105,151 @@ else:
         ]
 
     # SIDEBAR CONTENT
-    with st.sidebar:
-        with st.expander(label='Evaluation Section 1', expanded=True):
-            col1, col2, col3 = st.columns(3)
-            with col1:
-                st.write(TA_0s[0])
-            with col2:
-                TA_rating_1 = st.slider(label='TA_1', min_value=0, max_value=100, step=1,
-                                        value=50, label_visibility='hidden')
-            with col3:
-                st.write(TA_100s[0])
-            TA_rationale_1_pos = ''
-            TA_rationale_1_neg = ''
-            if TA_rating_1 < 40:
-                TA_rationale_1_neg = st.text_input("What made you feel unheard or disrespected during the session?")
-            if TA_rating_1 > 60:
-                TA_rationale_1_pos = st.text_input("What did the chatbot do that made you feel especially respected and understood?")
+    # with st.sidebar:
+    #     with st.expander(label='Evaluation Section 1', expanded=True):
+    #         col1, col2, col3 = st.columns(3)
+    #         with col1:
+    #             st.write(TA_0s[0])
+    #         with col2:
+    #             TA_rating_1 = st.slider(label='TA_1', min_value=0, max_value=100, step=1,
+    #                                     value=50, label_visibility='hidden')
+    #         with col3:
+    #             st.write(TA_100s[0])
+    #         TA_rationale_1_pos = ''
+    #         TA_rationale_1_neg = ''
+    #         if TA_rating_1 < 40:
+    #             TA_rationale_1_neg = st.text_input("What made you feel unheard or disrespected during the session?")
+    #         if TA_rating_1 > 60:
+    #             TA_rationale_1_pos = st.text_input("What did the chatbot do that made you feel especially respected and understood?")
             
-            # TA rating 2
-            col1, col2, col3 = st.columns(3)
-            with col1:
-                st.write(TA_0s[1])
-            with col2: 
-                TA_rating_2 = st.slider(label='TA_2', min_value=0, max_value=100, step=1,
-                                    value=50, label_visibility='collapsed')
-            with col3:
-                st.write(TA_100s[1])
-            TA_rationale_2_pos = ''
-            TA_rationale_2_neg = ''
-            if TA_rating_2 < 40:
-                TA_rationale_2_neg = st.text_input("What important topics or goals did you feel were missed?")
-            if TA_rating_2 > 60:
-                TA_rationale_2_pos = st.text_input("What made this session particularly focused and relevant to your needs?")
+    #         # TA rating 2
+    #         col1, col2, col3 = st.columns(3)
+    #         with col1:
+    #             st.write(TA_0s[1])
+    #         with col2: 
+    #             TA_rating_2 = st.slider(label='TA_2', min_value=0, max_value=100, step=1,
+    #                                 value=50, label_visibility='collapsed')
+    #         with col3:
+    #             st.write(TA_100s[1])
+    #         TA_rationale_2_pos = ''
+    #         TA_rationale_2_neg = ''
+    #         if TA_rating_2 < 40:
+    #             TA_rationale_2_neg = st.text_input("What important topics or goals did you feel were missed?")
+    #         if TA_rating_2 > 60:
+    #             TA_rationale_2_pos = st.text_input("What made this session particularly focused and relevant to your needs?")
             
-            # TA rating 3
-            col1, col2, col3 = st.columns(3)
-            with col1:
-                st.write(TA_0s[2])
-            with col2: 
-                TA_rating_3 = st.slider(label='TA_3', min_value=0, max_value=100, step=1,
-                                    value=50, label_visibility='collapsed')
-            with col3:
-                st.write(TA_100s[2])
-            TA_rationale_3_pos = ''
-            TA_rationale_3_neg = ''
-            if TA_rating_3 < 40:
-                TA_rationale_3_neg = st.text_input("What about the chatbot's approach didn't work well for you?")
-            if TA_rating_3 > 60:
-                TA_rationale_3_pos = st.text_input("What aspects of the chatbot's approach were especially helpful?")
+    #         # TA rating 3
+    #         col1, col2, col3 = st.columns(3)
+    #         with col1:
+    #             st.write(TA_0s[2])
+    #         with col2: 
+    #             TA_rating_3 = st.slider(label='TA_3', min_value=0, max_value=100, step=1,
+    #                                 value=50, label_visibility='collapsed')
+    #         with col3:
+    #             st.write(TA_100s[2])
+    #         TA_rationale_3_pos = ''
+    #         TA_rationale_3_neg = ''
+    #         if TA_rating_3 < 40:
+    #             TA_rationale_3_neg = st.text_input("What about the chatbot's approach didn't work well for you?")
+    #         if TA_rating_3 > 60:
+    #             TA_rationale_3_pos = st.text_input("What aspects of the chatbot's approach were especially helpful?")
             
-             # TA rating 4
-            col1, col2, col3 = st.columns(3)
-            with col1:
-                st.write(TA_0s[3])
-            with col2: 
-                TA_rating_4 = st.slider(label='TA_4', min_value=0, max_value=100, step=1,
-                                    value=50, label_visibility='collapsed')
-            with col3:
-                st.write(TA_100s[3])
-            TA_rationale_4_pos = ''
-            TA_rationale_4_neg = ''
-            if TA_rating_4 < 40:
-                TA_rationale_4_neg = st.text_input("What were the main things that made this session unsatisfactory?")
-            if TA_rating_4 > 60:
-                TA_rationale_4_pos = st.text_input("What made this session particularly valuable for you?")
+    #          # TA rating 4
+    #         col1, col2, col3 = st.columns(3)
+    #         with col1:
+    #             st.write(TA_0s[3])
+    #         with col2: 
+    #             TA_rating_4 = st.slider(label='TA_4', min_value=0, max_value=100, step=1,
+    #                                 value=50, label_visibility='collapsed')
+    #         with col3:
+    #             st.write(TA_100s[3])
+    #         TA_rationale_4_pos = ''
+    #         TA_rationale_4_neg = ''
+    #         if TA_rating_4 < 40:
+    #             TA_rationale_4_neg = st.text_input("What were the main things that made this session unsatisfactory?")
+    #         if TA_rating_4 > 60:
+    #             TA_rationale_4_pos = st.text_input("What made this session particularly valuable for you?")
 
-        with st.expander(label='Evaluation Section 2', expanded=False):
-            st.write('How much would you like to continue working with the chatbot in the future?')
-            col1, col2, col3 =st.columns(spec=[0.2,0.6,0.2],gap='small',vertical_alignment="top")
-            with col1:
-                st.write('Not at all')
-            with col2:
-                UE_rating_1 = st.slider(label='EU_1', min_value=0, max_value=10, step=1,
-                                        value=5,label_visibility="collapsed")
-            with col3:
-                st.write('Very much')
+    #     with st.expander(label='Evaluation Section 2', expanded=False):
+    #         st.write('How much would you like to continue working with the chatbot in the future?')
+    #         col1, col2, col3 =st.columns(spec=[0.2,0.6,0.2],gap='small',vertical_alignment="top")
+    #         with col1:
+    #             st.write('Not at all')
+    #         with col2:
+    #             UE_rating_1 = st.slider(label='EU_1', min_value=0, max_value=10, step=1,
+    #                                     value=5,label_visibility="collapsed")
+    #         with col3:
+    #             st.write('Very much')
             
-            st.write('How likely are you to recommend this chatbot to others?')
-            col1, col2, col3 =st.columns(spec=[0.2,0.6,0.2],gap='small',vertical_alignment="top")
-            with col1:
-                st.write('Not likely at all')
-            with col2:
-                UE_rating_2 = st.slider(label='EU_2', min_value=0, max_value=10, step=1,
-                                        value=5,label_visibility="collapsed")
-            with col3:
-                st.write('Extremely likely')
+    #         st.write('How likely are you to recommend this chatbot to others?')
+    #         col1, col2, col3 =st.columns(spec=[0.2,0.6,0.2],gap='small',vertical_alignment="top")
+    #         with col1:
+    #             st.write('Not likely at all')
+    #         with col2:
+    #             UE_rating_2 = st.slider(label='EU_2', min_value=0, max_value=10, step=1,
+    #                                     value=5,label_visibility="collapsed")
+    #         with col3:
+    #             st.write('Extremely likely')
 
         
-        with st.expander(label='Evaluation Section 3', expanded=False):
-            st.write('To what extent did the chatbot express warmth and care towards you?')
-            col1, col2, col3 =st.columns(spec=[0.2,0.6,0.2],gap='small',vertical_alignment="top")
-            with col1:
-                st.write("Not at all")
-            with col2:
-                Empathy_rating_1 = st.slider(label='EMP_1', min_value=0, max_value=100, step=1,
-                                        value=50,label_visibility="collapsed")
-            with col3:
-                st.write("A great deal")
+    #     with st.expander(label='Evaluation Section 3', expanded=False):
+    #         st.write('To what extent did the chatbot express warmth and care towards you?')
+    #         col1, col2, col3 =st.columns(spec=[0.2,0.6,0.2],gap='small',vertical_alignment="top")
+    #         with col1:
+    #             st.write("Not at all")
+    #         with col2:
+    #             Empathy_rating_1 = st.slider(label='EMP_1', min_value=0, max_value=100, step=1,
+    #                                     value=50,label_visibility="collapsed")
+    #         with col3:
+    #             st.write("A great deal")
             
-            st.write('How accurately did the chatbot reflect your feelings and experiences back to you?')
-            col1, col2, col3 =st.columns(spec=[0.2,0.6,0.2],gap='small',vertical_alignment="top")
-            with col1:
-                st.write("Not at all")
-            with col2:
-                Empathy_rating_2 = st.slider(label='EMP_2', min_value=0, max_value=100, step=1,
-                                        value=50,label_visibility="collapsed")
-            with col3:
-                st.write("Extremely accurate")
+    #         st.write('How accurately did the chatbot reflect your feelings and experiences back to you?')
+    #         col1, col2, col3 =st.columns(spec=[0.2,0.6,0.2],gap='small',vertical_alignment="top")
+    #         with col1:
+    #             st.write("Not at all")
+    #         with col2:
+    #             Empathy_rating_2 = st.slider(label='EMP_2', min_value=0, max_value=100, step=1,
+    #                                     value=50,label_visibility="collapsed")
+    #         with col3:
+    #             st.write("Extremely accurate")
                 
-            st.write('How well did the chatbot help you explore feelings you hadn\'t initially expressed?')
-            col1, col2, col3 =st.columns(spec=[0.2,0.6,0.2],gap='small',vertical_alignment="top")
-            with col1:
-                st.write("Not at all")
-            with col2:
-                Empathy_rating_3 = st.slider(label='EMP_3', min_value=0, max_value=100, step=1,
-                                        value=50,label_visibility="collapsed")
-            with col3:
-                st.write("Very well")
+    #         st.write('How well did the chatbot help you explore feelings you hadn\'t initially expressed?')
+    #         col1, col2, col3 =st.columns(spec=[0.2,0.6,0.2],gap='small',vertical_alignment="top")
+    #         with col1:
+    #             st.write("Not at all")
+    #         with col2:
+    #             Empathy_rating_3 = st.slider(label='EMP_3', min_value=0, max_value=100, step=1,
+    #                                     value=50,label_visibility="collapsed")
+    #         with col3:
+    #             st.write("Very well")
         
 
-        st.write('If you have not saved your conversation yet, please make sure to save your conversation before you save your ratings.')
-        exit_ind = 0
-        if st.button('Save ratings'): exit_ind = 1
+    #     st.write('If you have not saved your conversation yet, please make sure to save your conversation before you save your ratings.')
+    #     exit_ind = 0
+    #     if st.button('Save ratings'): exit_ind = 1
 
-        if exit_ind == 1:
+    #     if exit_ind == 1:
 
-            ratings_data = {
-                'aspect': ['TA_rating_1', 'TA_rating_2', 'TA_rating_3','TA_rating_4','TA_rationale_1_pos', 'TA_rationale_2_pos', 
-                           'TA_rationale_3_pos', 'TA_rationale_4_pos',
-                           'TA_rationale_1_neg', 'TA_rationale_2_neg', 'TA_rationale_3_neg', 'TA_rationale_4_neg',
-                           'UE_rating_1','UE_rating_2',
-                           'Empathy_rating_1','Empathy_rating_2','Empathy_rating_3'],
-                'rating': [TA_rating_1, TA_rating_2, TA_rating_3,TA_rating_4,
-                           TA_rationale_1_pos, TA_rationale_2_pos, TA_rationale_3_pos, TA_rationale_4_pos,
-                           TA_rationale_1_neg, TA_rationale_2_neg, TA_rationale_3_neg, TA_rationale_4_neg,
-                           UE_rating_1,UE_rating_2,
-                           Empathy_rating_1,Empathy_rating_2,Empathy_rating_3]
-            }
-            ratings_df = pd.DataFrame(ratings_data)
+    #         ratings_data = {
+    #             'aspect': ['TA_rating_1', 'TA_rating_2', 'TA_rating_3','TA_rating_4','TA_rationale_1_pos', 'TA_rationale_2_pos', 
+    #                        'TA_rationale_3_pos', 'TA_rationale_4_pos',
+    #                        'TA_rationale_1_neg', 'TA_rationale_2_neg', 'TA_rationale_3_neg', 'TA_rationale_4_neg',
+    #                        'UE_rating_1','UE_rating_2',
+    #                        'Empathy_rating_1','Empathy_rating_2','Empathy_rating_3'],
+    #             'rating': [TA_rating_1, TA_rating_2, TA_rating_3,TA_rating_4,
+    #                        TA_rationale_1_pos, TA_rationale_2_pos, TA_rationale_3_pos, TA_rationale_4_pos,
+    #                        TA_rationale_1_neg, TA_rationale_2_neg, TA_rationale_3_neg, TA_rationale_4_neg,
+    #                        UE_rating_1,UE_rating_2,
+    #                        Empathy_rating_1,Empathy_rating_2,Empathy_rating_3]
+    #         }
+    #         ratings_df = pd.DataFrame(ratings_data)
             
-            # ratings_file_name = "EvalRatings_Unadapted_P{PID}.csv".format(PID=user_PID)
-            ratings_file_name = "EvalRatings_{style}_P{PID}.csv".format(style=target_styles[style_id], PID=user_PID)
-            ratings_df.to_csv(ratings_file_name, index=False)
-            blob = bucket.blob(ratings_file_name)
-            blob.upload_from_filename(ratings_file_name)
-            st.write("**Evaluation ratings was uploaded successfully.**")
+    #         # ratings_file_name = "EvalRatings_Unadapted_P{PID}.csv".format(PID=user_PID)
+    #         ratings_file_name = "EvalRatings_{style}_P{PID}.csv".format(style=target_styles[style_id], PID=user_PID)
+    #         ratings_df.to_csv(ratings_file_name, index=False)
+    #         blob = bucket.blob(ratings_file_name)
+    #         blob.upload_from_filename(ratings_file_name)
+    #         st.write("**Evaluation ratings was uploaded successfully.**")
 
 
         # add_selectbox = st.selectbox(
