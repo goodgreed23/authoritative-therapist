@@ -324,31 +324,10 @@ else:
                                             unadapted_chat_history= st.session_state.messages,
                                             unadapted_response=unada_bot_response)
 
-        ## Modified authoritative definition
-        definition_new = "Authoritative is the tendency to command or demand others in a conversation."
-        survey_item_new = "I am very likely to tell someone what they should do; I sometimes insist that others do what I say; I expect people to obey when I ask them to do something; When I feel others should do something for me, I ask for it in a demanding tone of voice."
-        ada_response_2 = csmagent_chain.predict(communication_style=target_style,
-                                            definition=definition_new,
-                                            survey_item=survey_item_new,
-                                            unadapted_chat_history= st.session_state.messages,
-                                            unadapted_response=unada_bot_response)
-
-        # ## Modified authoritative definition and survey items
-        # definition_new = "Authoritative is the tendency to command or demand others in a conversation."
-        # survey_item_new_2 = "I am very likely to tell someone what they should do; I sometimes insist that others do what I say; I expect people to obey when I ask them to do something;"
-        # ada_response_3 = csmagent_chain.predict(communication_style=target_style,
-        #                                     definition=definition_new,
-        #                                     survey_item=survey_item_new_2,
-        #                                     unadapted_chat_history= st.session_state.messages,
-        #                                     unadapted_response=unada_bot_response)
-
         # Stream the response to the chat using `st.write_stream`, then store it in 
         # session state.
         with st.chat_message("assistant"):
-            response = st.write_stream(response_generator(response = "Unadapted: " + unada_bot_response))
             response = st.write_stream(response_generator(response = "Prev Authoritative: " +ada_response))
-            response = st.write_stream(response_generator(response = "Mod Authoritative: " +ada_response_2))
-            # response = st.write_stream(response_generator(response = "Mod 2 Authoritative: " +ada_response_3))
 
         st.session_state.messages.append({"role": "assistant", "content": ada_response})
         chat_history_df = pd.DataFrame(st.session_state.messages)
