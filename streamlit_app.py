@@ -327,7 +327,7 @@ else:
         # Stream the response to the chat using `st.write_stream`, then store it in 
         # session state.
         with st.chat_message("assistant"):
-            response = st.write_stream(response_generator(response = "Prev Authoritative: " +ada_response))
+            response = st.write_stream(response_generator(response = ada_response))
 
         st.session_state.messages.append({"role": "assistant", "content": ada_response})
         chat_history_df = pd.DataFrame(st.session_state.messages)
