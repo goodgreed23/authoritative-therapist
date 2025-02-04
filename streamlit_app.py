@@ -26,6 +26,7 @@ from models import MODEL_CONFIGS
 from utils.prompt_utils import target_styles, definitions, survey_items
 from utils.eval_qs import TA_0s, TA_100s
 from utils.utils import response_generator
+from datetime import datetime
 
 st.set_page_config(page_title="Therapist Chatbot Evaluation", page_icon=None, layout="centered", initial_sidebar_state="expanded", menu_items=None)
 
@@ -66,7 +67,12 @@ client = storage.Client(credentials=credentials, project='galvanic-fort-430920-e
 bucket = client.get_bucket('streamlit-bucket-bot-eval')
 file_name = 'NA'
 
-
+def save_duration():
+    if st.session_state["start_time"]:
+        duration = datetime.now() - st.session_state["start_time"]
+        st.session_state["evaluation_durations"] = duration
+        # st.session_state["start_time"] = None  # Reset for the next model
+    return duration
 
 if not user_PID:
     st.info("Please enter your participant ID to start.", icon="🗝️")
@@ -79,6 +85,13 @@ else:
     llm = ChatOpenAI(model=MODEL_SELECTED, api_key=openai_api_key)
     # llm = ChatOpenAI(model="gpt-4o-mini", api_key=openai_api_key)
 
+    # start tracking the duration
+    if 'start_time' not in st.session_state:
+        st.session_state['start_time'] = datetime.now()
+    if "evaluation_durations" not in st.session_state:
+        st.session_state["evaluation_durations"] = None
+    start_time_row = pd.DataFrame([{"role": "Start Time", "content": st.session_state['start_time']}])
+        
     # therapist agent
     therapist_model_config = MODEL_CONFIGS['Therapist']
     therapyagent_prompt_template = ChatPromptTemplate.from_messages([
@@ -345,6 +358,11 @@ else:
         # file_name = "Unadapted_P{PID}.csv".format(PID=user_PID)
         file_name = "{style}_P{PID}.csv".format(style=target_styles[style_id], PID=user_PID)
         # st.write("file name is "+file_name)
+
+        end_time_row = pd.DataFrame([{"role": "End Time", "content": datetime.now()}])
+        duration_row = pd.DataFrame([{"role": "Duration", "content": save_duration()}])
+        # Append the time rows
+        chat_history_df = pd.concat([chat_history_df, start_time_row, end_time_row, duration_row], ignore_index=True)
         
         chat_history_df.to_csv(file_name, index=False)
         
@@ -352,7 +370,7 @@ else:
         blob.upload_from_filename(file_name)
 
         if st.button("Save & Start Evaluation"):
-            st.write("**Chat history was uploaded successfully. Please fill out the evaluation questions next. We would like to hear your experience interacting with this AI therapy chatbot.**")
+            st.write("**Chat history is saved successfully. You can begin filling out the evaluation questions now.**")
 
         # csv = chat_history_df.to_csv()
         # st.download_button(
