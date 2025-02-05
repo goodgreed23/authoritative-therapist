@@ -32,7 +32,7 @@ st.set_page_config(page_title="Therapist Chatbot Evaluation", page_icon=None, la
 
 # CONFIGS
 style_id = 0
-min_turns = 10   # number of turns to make before users can save the chat
+min_turns = 20   # number of turns to make before users can save the chat
 MODEL_SELECTED = "gpt-4o"
 
 # Show title and description.
